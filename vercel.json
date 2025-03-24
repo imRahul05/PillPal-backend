@@ -1,9 +1,10 @@
 {
+    "version": 2,
+    "builds": [
+      { "src": "server.js", "use": "@vercel/node" }
+    ],
     "routes": [
-      {
-        "src": "/type-font/(.*)",
-        "dest": "/public/type-font/$1"
-      }
+      { "src": "/(.*)", "dest": "/server.js" }
     ]
   }
   
