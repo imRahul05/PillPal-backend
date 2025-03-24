@@ -32,6 +32,14 @@ app.post("/api/gemini", async (req, res) => {
     }
 });
 
+// Add a health check endpoint for Render
+app.get("/", (req, res) => {
+    res.send("PillPal API is running");
+});
+
 const PORT = process.env.PORT || 5002;
-app.listen(PORT, "0.0.0.0", () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+    console.log(`Server address: http://localhost:${PORT}`);
+});
 
